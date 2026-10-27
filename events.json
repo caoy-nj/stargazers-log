@@ -48,6 +48,30 @@
     "featured": false
   },
   {
+    "name": "python/cpython",
+    "description": "Python 官方解释器与标准库实现，适合深入理解语言设计、运行时和大型开源协作。",
+    "language": "Python",
+    "languageColor": "#3572A5",
+    "stars": "69.1k",
+    "topics": ["编程语言", "Python", "开源协作"],
+    "category": "工具",
+    "starred": "2026-10-27",
+    "url": "https://github.com/python/cpython",
+    "featured": false
+  },
+  {
+    "name": "golang/go",
+    "description": "Go 语言实现与标准库，以简洁、高效和可维护性见长，是研究工程化设计的优秀样本。",
+    "language": "Go",
+    "languageColor": "#00ADD8",
+    "stars": "131k",
+    "topics": ["编程语言", "Go", "后端"],
+    "category": "工具",
+    "starred": "2026-10-27",
+    "url": "https://github.com/golang/go",
+    "featured": false
+  },
+  {
     "name": "caoy-nj/Hello-World",
     "description": "从第一行代码开始，记录持续学习、实践与探索开源世界的起点。",
     "language": "HTML",

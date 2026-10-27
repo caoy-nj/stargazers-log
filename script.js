@@ -3,12 +3,14 @@ const state = {
   category: "全部",
   query: "",
   topic: "",
+  language: "",
 };
 
 const elements = {
   list: document.querySelector("#starred-list"),
   status: document.querySelector("#results-status"),
   search: document.querySelector("#repo-search"),
+  languageFilter: document.querySelector("#language-filter"),
   searchButton: document.querySelector("#header-search-button"),
   filters: [...document.querySelectorAll("[data-filter]")],
   topicFilters: [...document.querySelectorAll("[data-topic]")],
@@ -48,9 +50,13 @@ function normalizeUrl(value) {
 function getVisibleEvents() {
   const normalizedQuery = state.query.trim().toLocaleLowerCase("zh-CN");
   const normalizedTopic = state.topic.toLocaleLowerCase("zh-CN");
+  const normalizedLanguage = state.language.toLocaleLowerCase("en");
 
   return state.events.filter((event) => {
     const matchesCategory = state.category === "全部" || event.category === state.category;
+    const matchesLanguage =
+      !normalizedLanguage ||
+      (event.language || "").toLocaleLowerCase("en") === normalizedLanguage;
     const searchableText = [
       event.name,
       event.description,
@@ -67,8 +73,24 @@ function getVisibleEvents() {
         (topic) => topic.toLocaleLowerCase("zh-CN") === normalizedTopic,
       );
 
-    return matchesCategory && matchesQuery && matchesTopic;
+    return matchesCategory && matchesLanguage && matchesQuery && matchesTopic;
   });
+}
+
+function populateLanguageFilter() {
+  const collator = new Intl.Collator("en", { sensitivity: "base" });
+  const languages = [...new Set(state.events.map((event) => event.language).filter(Boolean))]
+    .sort(collator.compare);
+  const previousLanguage = state.language.toLocaleLowerCase("en");
+
+  elements.languageFilter.replaceChildren(new Option("全部语言", ""));
+  languages.forEach((language) => {
+    elements.languageFilter.add(new Option(language, language));
+  });
+
+  state.language =
+    languages.find((language) => language.toLocaleLowerCase("en") === previousLanguage) || "";
+  elements.languageFilter.value = state.language;
 }
 
 function ownerInitials(owner = "") {
@@ -179,7 +201,9 @@ function clearFilters() {
   state.category = "全部";
   state.query = "";
   state.topic = "";
+  state.language = "";
   elements.search.value = "";
+  elements.languageFilter.value = "";
   render();
   elements.search.focus();
 }
@@ -213,6 +237,7 @@ function render() {
 
   const filterSummary = [
     state.category !== "全部" ? `类别「${state.category}」` : "",
+    state.language ? `语言「${state.language}」` : "",
     state.topic ? `主题「${state.topic}」` : "",
     state.query.trim() ? `搜索「${state.query.trim()}」` : "",
   ].filter(Boolean);
@@ -227,6 +252,11 @@ function focusSearch() {
 
 elements.search.addEventListener("input", (event) => {
   state.query = event.target.value;
+  render();
+});
+
+elements.languageFilter.addEventListener("change", (event) => {
+  state.language = event.target.value;
   render();
 });
 
@@ -289,6 +319,7 @@ async function loadEvents() {
     });
 
     state.events = [...uniqueEvents.values()];
+    populateLanguageFilter();
     render();
   } catch (error) {
     elements.list.setAttribute("aria-busy", "false");

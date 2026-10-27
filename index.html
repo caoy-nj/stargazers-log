@@ -230,7 +230,7 @@
             </div>
 
             <div class="mt-6 rounded-2xl border border-slate-200/80 bg-white p-3 shadow-[0_6px_24px_rgba(75,51,133,0.04)] sm:p-4">
-              <div class="flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between">
+              <div class="grid gap-3 md:grid-cols-[minmax(0,1fr)_176px] xl:grid-cols-[minmax(0,1fr)_176px_auto] xl:items-center">
                 <label class="group relative block flex-1" for="repo-search">
                   <span class="sr-only">搜索仓库、语言或主题</span>
                   <svg aria-hidden="true" viewBox="0 0 24 24" class="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 fill-none stroke-slate-400 stroke-2 transition group-focus-within:stroke-brand-600">
@@ -245,7 +245,19 @@
                     class="h-11 w-full rounded-xl border border-slate-200 bg-slate-50/80 py-2.5 pl-10 pr-4 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-brand-300 focus:bg-white focus:ring-4 focus:ring-brand-100/70"
                   >
                 </label>
-                <div class="flex items-center gap-1 overflow-x-auto pb-1 xl:pb-0" role="group" aria-label="按类别筛选">
+                <label class="relative block" for="language-filter">
+                  <span class="sr-only">按编程语言筛选</span>
+                  <select
+                    id="language-filter"
+                    class="h-11 w-full appearance-none rounded-xl border border-slate-200 bg-slate-50/80 py-2.5 pl-3.5 pr-9 text-xs font-semibold text-slate-600 outline-none transition focus:border-brand-300 focus:bg-white focus:ring-4 focus:ring-brand-100/70"
+                  >
+                    <option value="">全部语言</option>
+                  </select>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" class="pointer-events-none absolute right-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 fill-none stroke-slate-400 stroke-2">
+                    <path d="m7 9 5 5 5-5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </label>
+                <div class="flex items-center gap-1 overflow-x-auto pb-1 md:col-span-2 xl:col-span-1 xl:pb-0" role="group" aria-label="按类别筛选">
                   <button type="button" class="filter-button shrink-0 rounded-lg bg-brand-700 px-3 py-2 text-xs font-semibold text-white shadow-sm transition" data-filter="全部" aria-pressed="true">全部</button>
                   <button type="button" class="filter-button shrink-0 rounded-lg px-3 py-2 text-xs font-semibold text-slate-500 transition hover:bg-brand-50 hover:text-brand-700" data-filter="前端" aria-pressed="false">前端</button>
                   <button type="button" class="filter-button shrink-0 rounded-lg px-3 py-2 text-xs font-semibold text-slate-500 transition hover:bg-brand-50 hover:text-brand-700" data-filter="工具" aria-pressed="false">工具</button>
