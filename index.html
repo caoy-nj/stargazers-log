@@ -80,12 +80,16 @@
               <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
             </svg>
           </button>
-          <span
-            class="grid h-10 w-10 place-items-center rounded-full border border-white bg-gradient-to-br from-brand-100 to-brand-200 text-sm font-bold text-brand-700 shadow-sm ring-1 ring-brand-200/60"
-            aria-label="个人账户"
+          <a
+            href="https://github.com/caoy-nj"
+            target="_blank"
+            rel="noreferrer"
+            class="grid h-10 w-10 place-items-center rounded-full border border-white bg-gradient-to-br from-brand-100 to-brand-200 text-sm font-bold text-brand-700 shadow-sm ring-1 ring-brand-200/60 transition hover:-translate-y-0.5 hover:ring-brand-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2"
+            aria-label="Leo Cao 的 GitHub 开发者档案"
+            title="Leo Cao · aokitech"
           >
-            SL
-          </span>
+            LC
+          </a>
         </div>
       </div>
 
@@ -200,7 +204,7 @@
                       <span class="grid h-7 w-7 place-items-center rounded-full border-2 border-white bg-slate-200 text-[9px] font-bold text-slate-600">UI</span>
                       <span class="grid h-7 w-7 place-items-center rounded-full border-2 border-white bg-fuchsia-200 text-[9px] font-bold text-fuchsia-700">DX</span>
                     </div>
-                    <span class="text-[11px] font-medium text-slate-500">来自你的收藏宇宙</span>
+                    <span class="text-[11px] font-medium text-slate-500">Leo Cao <span class="text-brand-300">·</span> aokitech</span>
                   </div>
                 </article>
               </div>
@@ -363,16 +367,35 @@
     </main>
 
     <footer class="border-t border-slate-200/70 bg-white/60">
-      <div class="mx-auto flex max-w-7xl flex-col gap-5 px-5 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
+      <div class="mx-auto flex max-w-7xl flex-col gap-6 px-5 py-8 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-10">
         <div class="flex items-center gap-2.5">
           <span class="grid h-8 w-8 place-items-center rounded-xl bg-brand-100 text-brand-700">
             <svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 fill-current">
               <path d="m12 2.7 2.72 5.51 6.08.89-4.4 4.28 1.04 6.05L12 16.56l-5.44 2.87 1.04-6.05-4.4-4.28 6.08-.89L12 2.7Z" />
             </svg>
           </span>
-          <span class="text-xs font-medium text-slate-500">Stargazers Log · 为灵感而收藏</span>
+          <div>
+            <p class="text-xs font-semibold text-slate-700">Stargazers Log</p>
+            <p class="mt-0.5 text-[10px] text-slate-400">为灵感而收藏</p>
+          </div>
         </div>
-        <p class="text-[11px] text-slate-400">一个轻量的个人开源项目索引</p>
+        <div class="flex flex-wrap items-center gap-3">
+          <div class="flex items-center gap-3 rounded-2xl border border-slate-200/80 bg-white px-3 py-2.5 shadow-sm">
+            <span class="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-800 text-[11px] font-bold text-white shadow-sm">LC</span>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-semibold text-slate-900">Leo Cao</span>
+                <span class="text-slate-300">·</span>
+                <a href="https://github.com/caoy-nj" target="_blank" rel="noreferrer" class="text-[10px] font-medium text-brand-700 transition hover:text-brand-900">@caoy-nj</a>
+              </div>
+              <p class="mt-0.5 text-[10px] text-slate-500">Software Developer</p>
+            </div>
+          </div>
+          <div class="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-brand-50 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.12em] text-brand-800">
+            <span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>
+            aokitech
+          </div>
+        </div>
       </div>
     </footer>
   </body>
