@@ -1,9 +1,74 @@
 [
-  { "name": "caoy-nj/Hello-World", "starred": "2026-10-27" },
-  { "name": "github/docs", "starred": "2026-10-27" },
-  { "name": "caoy-nj/octo-repo", "starred": "2026-10-27" },
-  { "name": "caoy-nj/octo-repo", "starred": "2026-10-27" },
-  { "name": "caoy-nj/octo-repo", "starred": "2026-10-27" },
-  { "name": "caoy-nj/octo-repo", "starred": "2026-10-27" },
-  { "name": "caoy-nj/octo-repo", "starred": "2026-10-27" }
+  {
+    "name": "github/docs",
+    "description": "GitHub 官方文档，覆盖产品使用、协作流程与平台最佳实践，是研究开发者体验的优秀入口。",
+    "language": "Markdown",
+    "languageColor": "#8250df",
+    "stars": "18.2k",
+    "topics": ["文档工程", "开发者体验", "Open source"],
+    "category": "文档",
+    "starred": "2026-10-27",
+    "url": "https://github.com/github/docs",
+    "featured": true
+  },
+  {
+    "name": "tailwindlabs/tailwindcss",
+    "description": "以实用类为核心的现代 CSS 框架，适合快速建立一致、可维护且有设计感的产品界面。",
+    "language": "TypeScript",
+    "languageColor": "#3178c6",
+    "stars": "86.5k",
+    "topics": ["设计系统", "TypeScript", "CSS"],
+    "category": "前端",
+    "starred": "2026-10-27",
+    "url": "https://github.com/tailwindlabs/tailwindcss",
+    "featured": true
+  },
+  {
+    "name": "vercel/next.js",
+    "description": "面向生产环境的 React 框架，提供路由、渲染与性能优化能力，适合构建完整的 Web 产品。",
+    "language": "JavaScript",
+    "languageColor": "#f1e05a",
+    "stars": "131k",
+    "topics": ["现代框架", "React", "Web"],
+    "category": "前端",
+    "starred": "2026-10-27",
+    "url": "https://github.com/vercel/next.js",
+    "featured": false
+  },
+  {
+    "name": "microsoft/vscode",
+    "description": "轻量而强大的代码编辑器，值得研究其扩展体系、性能取舍与大型桌面产品的设计方式。",
+    "language": "TypeScript",
+    "languageColor": "#3178c6",
+    "stars": "168k",
+    "topics": ["开发者体验", "TypeScript", "工具"],
+    "category": "工具",
+    "starred": "2026-10-27",
+    "url": "https://github.com/microsoft/vscode",
+    "featured": false
+  },
+  {
+    "name": "caoy-nj/Hello-World",
+    "description": "从第一行代码开始，记录持续学习、实践与探索开源世界的起点。",
+    "language": "HTML",
+    "languageColor": "#e34c26",
+    "stars": "—",
+    "topics": ["学习记录", "个人项目", "HTML"],
+    "category": "个人",
+    "starred": "2026-10-27",
+    "url": "https://github.com/caoy-nj/Hello-World",
+    "featured": false
+  },
+  {
+    "name": "caoy-nj/octo-repo",
+    "description": "专注实验与原型验证的个人项目空间，用轻量的方式把想法推进成可体验的产品。",
+    "language": "CSS",
+    "languageColor": "#563d7c",
+    "stars": "—",
+    "topics": ["产品实验", "个人项目", "UI"],
+    "category": "个人",
+    "starred": "2026-10-27",
+    "url": "https://github.com/caoy-nj/octo-repo",
+    "featured": false
+  }
 ]

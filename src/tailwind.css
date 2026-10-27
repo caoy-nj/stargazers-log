@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "SF Pro Display", "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --color-brand-50: #faf8ff;
+  --color-brand-100: #f3efff;
+  --color-brand-200: #e8dfff;
+  --color-brand-300: #d5c5ff;
+  --color-brand-400: #b99cff;
+  --color-brand-500: #9b77f2;
+  --color-brand-600: #8158e8;
+  --color-brand-700: #6d45ce;
+  --color-brand-800: #5836a6;
+  --color-brand-900: #472d83;
+  --shadow-premium: 0 28px 80px rgba(75, 51, 133, 0.1), 0 2px 8px rgba(75, 51, 133, 0.04);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-image:
+      radial-gradient(circle at 8% 4%, rgba(232, 223, 255, 0.5), transparent 26rem),
+      radial-gradient(circle at 92% 20%, rgba(250, 232, 255, 0.38), transparent 24rem);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: var(--color-brand-200);
+    color: var(--color-brand-900);
+  }
+
+  button,
+  a,
+  input {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .portal-hero {
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(250, 248, 255, 0.92) 45%, rgba(243, 239, 255, 0.8) 100%);
+  }
+
+  .portal-hero::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+    opacity: 0.38;
+    background-image:
+      linear-gradient(rgba(129, 88, 232, 0.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(129, 88, 232, 0.055) 1px, transparent 1px);
+    background-size: 36px 36px;
+    mask-image: linear-gradient(to right, black, transparent 76%);
+  }
+
+  .repo-card::after {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    content: "";
+    pointer-events: none;
+    opacity: 0;
+    background: linear-gradient(110deg, rgba(243, 239, 255, 0.72), transparent 58%);
+    transition: opacity 220ms ease;
+  }
+
+  .repo-card:hover::after {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    animation: reveal-up 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .reveal-delay-2 {
+    animation-delay: 120ms;
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
